@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Amiri&display=swap" rel="stylesheet">
+  </link>
+  <script defer src="app.js"></script>
+
+  <title>Kids App</title>
+</head>
+
+<body onload="loadingEffect()">
+  <audio id="success_sound">
+    <source src="success sound.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
+  <audio id="wrong_sound">
+    <source src="incorrect sound effect.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
+  <div id="loader">
+    <img src="loading-gif.gif" alt="aa" />
+  </div>
+
+  <div class="div1">
+    <div style="height: 100px; overflow: hidden">
+      <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%">
+        <path class="header-background"
+          d="M-6.49,99.19 C176.91,117.94 -126.69,87.34 501.97,150.50 L500.00,0.00 L0.00,0.00 Z" style="stroke: none">
+        </path>
+      </svg>
+    </div>
+    <span class="page-logo">Kids Area</span>
+    <div class="inner-header">
+      <h1>Welcome!</h1>
+      <p>nice to see you</p>
+    </div>
+  </div>
+  <div class="question-card fade">
+    <h1 class="cover-header">هيا بنا نعرف اجزاء جسدنا </h1>
+    <div class="img-touch-zoom">
+      <img class="cover-img" src="body-parts-cover.jpg" alt="cover" width="300" height="450">
+    </div>
+
+    <hr>
+    <button class="start_btn">Start Now!</button>
+  </div>
+  <div class="second_card fade">
+    <h1 class="subject">First question</h1>
+    <div class="container">
+      <img src="body/total body.png" alt="aa" id="total-body" />
+      <div class="drop-area" id="body-head"></div>
+      <div class="drop-area" id="body-foot"></div>
+      <div class="drop-area" id="body-stomack"></div>
+      <div class="drop-area" id="body-skert"></div>
+      <div class="drop-area" id="body-kneeis"></div>
+      <div class="drop-area" id="body-left-arm"></div>
+      <div class="drop-area" id="body-right-arm"></div>
+      <div>
+        <img src="body/head.png" draggable="true" alt="head" width="140" height="100" id="head" class="body-parts" />
+        <img src="body/foot.png" alt="foot" width="130" height="50" id="foot" class="body-parts" />
+        <img src="body/kniees.png" alt="knees" width="100" height="50" id="knees" class="body-parts" />
+        <img src="body/left arm.png" alt="left-arm" width="90" height="85" id="left-arm" class="body-parts" />
+        <img src="body/right arm.png" alt="right-arm" width="100" height="85" id="right-arm" class="body-parts" />
+        <img src="body/skert.png" alt="skert" width="100" height="60" id="skert" class="body-parts" />
+        <img src="body/stomack.png" alt="stomack" width="90" height="65" id="stomack" class="body-parts" />
+      </div>
+    </div>
+
+    <button id="btn1" class="next_btn">Next</button>
+  </div>
+
+  <div class="second_card fade">
+    <h1 class="subject">second question</h1>
+    <div class="container">
+      <img src="second_part.png" alt="second part" id="total-body-part2">
+      <div class="drop-area2" id="part1"></div>
+      <div class="drop-area2" id="part2"></div>
+      <div class="drop-area2" id="part3"></div>
+      <div class="drop-area2" id="part4"></div>
+      <div class="drop-area2" id="part5"></div>
+      <div class="drop-area2" id="part6"></div>
+      <div class="drop-area2" id="part7"></div>
+      <div class="drop-area2" id="part8"></div>
+      <div class="drop-area2" id="part9"></div>
+      <div class="drop-area2" id="part10"></div>
+    </div>
+    <div>
+      <div class="body-parts-container">
+        <div id="head2" draggable="true" class="body-parts2"> رأس </div>
+        <div id="ear2" draggable="true" class="body-parts2"> أذن </div>
+        <div id="mouth2" draggable="true" class="body-parts2"> فم </div>
+        <div id="rest2" draggable="true" class="body-parts2"> معصم </div>
+        <div id="knee2" draggable="true" class="body-parts2"> ساق </div>
+        <div id="eye2" draggable="true" class="body-parts2"> عين </div>
+        <div id="nose2" draggable="true" class="body-parts2"> انف </div>
+        <div id="teeth2" draggable="true" class="body-parts2"> سن </div>
+        <div id="hand2" draggable="true" class="body-parts2"> يد </div>
+        <div id="foot2" draggable="true" class="body-parts2"> قدم </div>
+      </div>
+    </div>
+    <button id="btn2" class="next_btn">Next</button>
+  </div>
+
+  <div class="second_card fade">
+    <h1 class="qestion">جسمي ملكي</h1>
+    <div class="img-touch-zoom">
+      <img class="cover-img" src="My body is mine/my body is mine.jpg" alt="cover" width="300" height="450">
+    </div>
+    <hr>
+    <button class="next_btn">Start now !</button>
+  </div>
+
+  <div class="second_card fade">
+    <h1 class="qestion">من المسموح له بلمس اعضائك الخاصه؟ </h1>
+    <div class="answers-container">
+      <div class="wrong-answer">
+        <img src="My body is mine/false.png" width="60" height="60" alt="false">
+      </div>
+      <div class="right-answer">
+        <img src="My body is mine/true.png" width="60" height="60" alt="true">
+      </div>
+    </div>
+
+    <div id="div5">
+      <div class="parent">
+        <img id="mother" class="answers3" src="My body is mine/mother.jpeg" width="100" height="100" alt="mother">
+        <img id="neighbour" class="answers3" src="My body is mine/neighbour.jpeg" width="100" height="100"
+          alt="neighbour">
+      </div>
+      <div class="parent">
+        <img id="father" class="answers3" src="My body is mine/father.jpeg" width="100" height="100" alt="neighbour">
+        <img id="uncle" class="answers3" src="My body is mine/uncel.jpeg" width="100" height="100" alt="neighbour">
+      </div>
+    </div>
+
+    <button class="next_btn">Next</button>
+  </div>
+
+  <div class="second_card fade">
+    <h1 class="qestion"> عندما يطلب منك احد ان تلمس اعضائه الخاصه اقول ايه ؟</h1>
+    <div class="answers-container">
+
+      <div class="right-answer2">
+        <img src="My body is mine/true.png" width="60" height="60" alt="true">
+      </div>
+    </div>
+
+    <div id="div6">
+      <div class="parent">
+        <img id="yes" class="answers3" src="My body is mine/yes.jpeg" width="100" height="100" alt="mother">
+        <img id="no" class="answers3" src="My body is mine/no.jpeg" width="100" height="100" alt="neighbour">
+      </div>
+    </div>
+    <button class="next_btn">Next</button>
+  </div>
+
+
+
+  <div class="second_card fade" id="d1">
+    <h1 class="qestion">من مسموح له ان يحضنني بقرب؟ </h1>
+    <div class="answers-container">
+      <div id="w1">
+        <img src="My body is mine/false.png" width="60" height="60" alt="false">
+      </div>
+      <div id="r1">
+        <img src="My body is mine/true.png" width="60" height="60" alt="true">
+      </div>
+    </div>
+
+    <div id="div7">
+      <div class="parent">
+        <img id="sis" class="answers3" src="My body is mine/my sis.jpeg" width="100" height="100" alt="mother">
+        <img id="neighbour2" class="answers3" src="My body is mine/neighbour.jpeg" width="100" height="100"
+          alt="neighbour">
+      </div>
+      <div class="parent">
+        <img id="famile" class="answers3" src="My body is mine/my famile.jpeg" width="100" height="100" alt="neighbour">
+        <img id="stranger" class="answers3" src="My body is mine/strange person.jpeg" width="100" height="100"
+          alt="neighbour">
+      </div>
+    </div>
+
+    <button class="next_btn">Next</button>
+  </div>
+
+
+
+
+  <div class="second_card fade" id="d2">
+    <h1 class="qestion"> من مسموح له ان يبوسني في خدي؟</h1>
+    <div class="answers-container">
+      <div id="w2">
+        <img src="My body is mine/false.png" width="60" height="60" alt="false">
+      </div>
+      <div id="r2">
+        <img src="My body is mine/true.png" width="60" height="60" alt="true">
+      </div>
+    </div>
+
+    <div id="div8">
+      <div class="parent">
+        <img id="sis1" class="answers3" src="My body is mine/my sis.jpeg" width="100" height="100" alt="mother">
+        <img id="neighbour21" class="answers3" src="My body is mine/neighbour.jpeg" width="100" height="100"
+          alt="neighbour">
+      </div>
+      <div class="parent">
+        <img id="famile1" class="answers3" src="My body is mine/my famile.jpeg" width="100" height="100" alt="neighbour">
+        <img id="stranger1" class="answers3" src="My body is mine/strange person.jpeg" width="100" height="100"
+          alt="neighbour">
+      </div>
+    </div>
+
+    <button id="btn3" class="next_btn">Next</button>
+  </div>
+
+<!--third game -->
+
+<div class="second_card fade">
+  <h1 class="qestion">اختيار المواقف الصحيحه</h1>
+  <div class="img-touch-zoom">
+    <img class="cover-img" src="part 3/Part2/cover6.jpeg" alt="cover" width="300" height="450">
+  </div>
+  <hr>
+  <button class="next_btn">Start now !</button>
+</div>
+
+
+
+  <div class="second_card fade">
+    <h1 class="qestion"> أختر الموقف الصحيح؟</h1>
+
+<div class="container3">
+  <div class="right3">
+    <img class="img1" src="part 3/s1.1.jpeg" alt="not found" width="290" height="230">
+  </div>
+  <div class="wrong3">
+    <img class="img2" src="part 3/s1.jpg" alt="not found" width="290" height="230" >
+  </div>
+  
+  
+</div>
+    <button class="next_btn">Next</button>
+  </div>
+
+
+  <div class="second_card fade">
+    <h1 class="qestion"> أختر الموقف الصحيح؟</h1>
+
+<div class="container3">
+  <div class="wrong3">
+    <img class="img2" src="part 3/s2.jpg" alt="not found" width="290" height="230" >
+  </div>
+  <div class="right3">
+    <img class="img1" src="part 3/s2.1.jpeg" alt="not found" width="290" height="230">
+  </div>
+  
+</div>
+    <button class="next_btn">Next</button>
+  </div>
+
+
+  <div class="second_card fade">
+    <h1 class="qestion"> أختر الموقف الصحيح؟</h1>
+
+<div class="container3">
+  <div class="right3">
+    <img class="img1" src="part 3/s3.1.jpeg" alt="not found" width="290" height="230">
+  </div>
+  <div class="wrong3">
+    <img class="img2" src="part 3/s3.jpeg" alt="not found" width="290" height="230" >
+  </div>
+  
+  
+</div>
+    <button class="next_btn">Next</button>
+  </div>
+
+
+
+  <div class="second_card fade">
+    <h1 class="qestion"> أختر الموقف الصحيح؟</h1>
+
+<div class="container3">
+  <div class="wrong3">
+    <img class="img2" src="part 3/s4.1.jpeg" alt="not found" width="290" height="230" >
+  </div>
+  <div class="right3">
+    <img class="img1" src="part 3/s4.jpeg" alt="not found" width="290" height="230">
+  </div>
+  
+</div>
+    <button class="next_btn">Next</button>
+  </div>
+
+
+  <div class="second_card fade">
+    <h1 class="qestion"> أختر الموقف الصحيح؟</h1>
+
+<div class="container3">
+  <div class="right3">
+    <img class="img1" src="part 3/s5.jpeg" alt="not found" width="290" height="230">
+  </div>
+  <div class="wrong3">
+    <img class="img2" src="part 3/s5.1.jpeg" alt="not found" width="290" height="230" >
+  </div>
+  
+  
+</div>
+    <button class="next_btn">Next</button>
+  </div>
+
+
+
+  <div class="second_card fade">
+    <h1 class="qestion"> أختر الموقف الصحيح؟</h1>
+
+<div class="container3">
+  <div class="right3">
+    <img class="img1" src="part 3/Part2/q1.1.jpeg" alt="not found" width="290" height="230">
+  </div>
+  <div class="wrong3">
+    <img class="img2" src="part 3/Part2/q1.jpeg" alt="not found" width="290" height="230" >
+  </div>
+  
+  
+</div>
+    <button class="next_btn">Next</button>
+  </div>
+
+  <div class="second_card fade">
+    <h1 class="qestion"> أختر الموقف الصحيح؟</h1>
+
+<div class="container3">
+  <div class="right3">
+    <img class="img1" src="part 3/Part2/q2.jpeg" alt="not found" width="290" height="230">
+  </div>
+  <div class="wrong3">
+    <img class="img2" src="part 3/Part2/q2.1.jpg" alt="not found" width="290" height="230" >
+  </div>
+  
+  
+</div>
+    <button class="next_btn">Next</button>
+  </div>
+
+
+  <div class="second_card fade">
+    <h1 class="qestion"> أختر الموقف الصحيح؟</h1>
+
+<div class="container3">
+  
+  <div class="wrong3">
+    <img class="img2" src="part 3/Part2/q3.1.jpeg" alt="not found" width="290" height="230" >
+  </div>
+  <div class="right3">
+    <img class="img1" src="part 3/Part2/q3.jpeg" alt="not found" width="290" height="230">
+  </div>
+  
+  
+</div>
+    <button class="next_btn">Next</button>
+  </div>
+
+
+  <div class="second_card fade">
+    <h1 class="qestion"> أختر الموقف الصحيح؟</h1>
+
+<div class="container3">
+  
+  <div class="wrong3">
+    <img class="img2" src="part 3/Part2/q4.jpeg" alt="not found" width="290" height="230" >
+  </div>
+  <div class="right3">
+    <img class="img1" src="part 3/Part2/q4.1.jpeg" alt="not found" width="290" height="230">
+  </div>
+  
+  
+</div>
+    <button class="next_btn">Next</button>
+  </div>
+
+
+  <div class="second_card fade">
+    <h1 class="qestion"> لو حد لمسني لمسه سيئه؟</h1>
+
+<div class="container3">
+  <div class="right3">
+    <img class="img1" src="part 3/Part2/q5.jpeg" alt="not found" width="290" height="230">
+  </div>
+  <div class="wrong3">
+    <img class="img2" src="part 3/Part2/q5.1.jpeg" alt="not found" width="290" height="230" >
+  </div>
+  
+  
+</div>
+    <button class="next_btn">Next</button>
+  </div>
+
+
+  <div class="second_card fade">
+    <h1 class="qestion"> لو حد لمسني لمسه سيئه؟</h1>
+
+<div class="container3">
+  <div class="right3">
+    <img class="img1" src="part 3/Part2/q6.jpeg" alt="not found" width="290" height="230">
+  </div>
+  <div class="wrong3">
+    <img class="img2" src="part 3/Part2/q6.1.jpg" alt="not found" width="290" height="230" >
+  </div>
+  
+  
+</div>
+    <button class="next_btn">Review</button>
+  </div>
+
+
+
+
+  <div class="celebration fade">
+  </div>
+  </div>
+</body>
+
+</html>
